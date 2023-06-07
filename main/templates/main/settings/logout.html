@@ -1,0 +1,12 @@
+{% extends 'main/settings/settings.html' %}
+{% load static %}
+
+{% block right %}
+    <link rel="stylesheet" href="{% static 'main/css/main/settings/logout.css' %}">
+
+    <div class="content">
+        <div class="content__logout">Log out</div>
+        <div class="content__text">Would you like to log out?</div>
+        <a class="content__logout" href="{% url 'main:logout_user' %}">Log out</a>
+    </div>
+{% endblock %}

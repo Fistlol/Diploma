@@ -1,0 +1,41 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Montserrat, sans-serif;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.25);
+    height: 96px;
+}
+
+.top__logo {
+    margin-left: 31px;
+    height: 100%;
+}
+
+.top__nav {
+    display: flex;
+    align-items: center;
+}
+
+.top__nav__ref {
+    text-decoration: inherit;
+    color: #7D7D7D;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.07px;
+    margin: 0 110px;
+    font-weight: 500;
+}
+
+.top__nav__ref:hover {
+    color: #D0D0D0;
+}
+
+.top__nav__ref:focus {
+    color: #D0D0D0;
+}

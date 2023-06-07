@@ -1,0 +1,10 @@
+.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.content__logo {
+    height: 300px;
+}

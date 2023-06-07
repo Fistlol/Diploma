@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+}
+
+.container__left__nav {
+    margin-top: 42px;
+}
+
+.container__left__nav__block__link {
+    text-decoration: none;
+    color: #7D7D7D;
+}

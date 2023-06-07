@@ -1,0 +1,26 @@
+{% extends 'main/settings/settings.html' %}
+{% load static %}
+
+{% block right %}
+    <link rel="stylesheet" href="{% static 'main/css/main/settings/promo_codes.css' %}">
+    
+    <div class="content">
+        <div class="content__logo">
+            <img src="{% static 'main/icons/green_pepper.png' %}" class="content__logo__img" alt="logo">
+            <img src="{% static 'main/icons/green_pepper.png' %}" class="content__logo__img" alt="logo">
+            <img src="{% static 'main/icons/green_pepper.png' %}" class="content__logo__img" alt="logo">
+        </div>
+        <div class="content__title">
+            Get bonuses with Pepper!
+        </div>
+        <div class="content__description">
+            Get a discount by entering a promo code
+        </div>
+        <div class="content__buttons">
+            <input type="text" class="content__buttons__input">
+            <button class="content__buttons__share">
+                Share code
+            </button>
+        </div>
+    </div>
+{% endblock %}

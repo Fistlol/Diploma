@@ -1,0 +1,38 @@
+{% extends "main/main_page.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main/settings/settings.css' %}">
+
+    <div class="container">
+        <div class="container__left">
+            <nav class="container__left__nav">
+                <div class="container__left__nav__block">
+                    <a href="{% url 'main:your_information' %}" class="container__left__nav__block__link">
+                        Your Information
+                    </a>
+                </div>
+                <div class="container__left__nav__block">
+                    <a href="{% url 'main:order_history' %}" class="container__left__nav__block__link">
+                        Order History
+                    </a>
+                </div>
+                <div class="container__left__nav__block">
+                    <a href="{% url 'main:promo_codes' %}" class="container__left__nav__block__link">
+                        Promo Codes
+                    </a>
+                </div>
+                <div class="container__left__nav__block">
+                    <a href="{% url 'main:logout_page' %}" class="container__left__nav__block__link">
+                        Log out
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <div class="container__right">
+            {% block right %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

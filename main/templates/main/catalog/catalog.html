@@ -1,0 +1,83 @@
+{% extends "main/main_page.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main/catalog/catalog.css' %}">
+
+    <div class="content">
+        <div class="content__left">
+            <div class="content__left__price">
+                <div class="content__left__price__title">
+                    Price
+                </div>
+                <div class="content__left__price__buttons">
+                    <button class="content__left__price__buttons__button">₸</button>
+                    <button class="content__left__price__buttons__button">₸₸</button>
+                    <button class="content__left__price__buttons__button">₸₸₸</button>
+                </div>
+            </div>
+            <div class="content__left__program">
+                <div class="content__left__program__title">
+                    Program
+                </div>
+                <div class="content__left__program__buttons">
+                    <button class="content__left__program__buttons__button">health</button>
+                    <button class="content__left__program__buttons__button">keto</button>
+                    <button class="content__left__program__buttons__button">detox</button>
+                </div>
+            </div>
+            <div class="content__left__kilocalories">
+                <div class="content__left__kilocalories__title">
+                    Kilocalories
+                </div>
+                <div class="content__left__kilocalories__filters">
+                    <input class="content__left__kilocalories__filters__from" placeholder="from">
+                    <input class="content__left__kilocalories__filters__to" placeholder="to">
+                </div>
+            </div>
+            <div class="content__left__region">
+                <div class="content__left__region__text">
+                    Region
+                </div>
+                <div class="content__left__region__buttons">
+                    <div class="content__left__region__buttons__block">
+                        <button class="content__left__region__buttons__button">Almaty</button>
+                        <button class="content__left__region__buttons__button">Astana</button>
+                    </div>
+                    <div class="content__left__region__buttons__block">
+                        <button class="content__left__region__buttons__button">Shymkent</button>
+                        <button class="content__left__region__buttons__button">Karaganda</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content__right">
+            <div class="content__right__block">
+                <div class="content__right__block__text">
+                    My address: <a href="#" class="content__right__block__text__address">Kabanbai Batyra 230</a>
+                </div>
+            </div>
+            <div class="content__right__title">
+                <div class="content__right__title__text">Choose a menu</div>
+            </div>
+            <div class="content__right__companies">
+                {% for company in companies %}
+                    <div class="content__right__companies__block">
+                        <div class="content__right__companies__block__company">
+                            <div class="content__right__companies__block__company__name">
+                                {{ company.name }}
+                            </div>
+                            <div class="content__right__companies__block__company__description">
+                                {{ company.description }}
+                            </div>
+                            <div class="content__right__companies__block__company__price">
+                                Average Price: 12 000 ₸
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

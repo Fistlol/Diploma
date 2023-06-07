@@ -1,0 +1,29 @@
+{% extends 'main/settings/settings.html' %}
+{% load static %}
+
+{% block right %}
+    <link rel="stylesheet" href="{% static 'main/css/main/settings/your_information.css' %}">
+    
+    <div class="content">
+        <label class="container__label">
+            First Name
+        </label>
+        <input type="text" name="first_name" class="container__input">
+        <label class="container__label">
+            Last Name
+        </label>
+        <input type="text" name="last_name" class="container__input">
+        <label class="container__label">
+            E-mail Adress
+        </label>
+        <input type="text" name="email" class="container__input">
+        <label class="container__label">
+            Mobile Number
+        </label>
+        <input type="text" name="mobile_number" class="container__input">
+
+        <button class="container__save">
+            Save
+        </button>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/main/main_page.css' %}">
+    <title>Pepper Food</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="top">
+            <a href="/" class="top__logo">
+                <img src="{% static 'main/icons/peper_logo_main.png' %}" alt="logo">
+            </a>
+            <nav class="top__nav">
+                <a href="{% url 'main:catalog' %}" class="top__nav__ref">
+                    Catalog
+                </a>
+                <a href="{% url 'main:my_plans' %}" class="top__nav__ref">
+                    My plans
+                </a>
+                <a href="{% url 'main:checklist' %}" class="top__nav__ref">
+                    Checklist
+                </a>
+                <a href="{% url 'main:settings' %}" class="top__nav__ref">
+                    Settings
+                </a>
+            </nav>
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

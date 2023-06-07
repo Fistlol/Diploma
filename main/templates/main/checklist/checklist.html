@@ -1,0 +1,60 @@
+{% extends "main/main_page.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main/checklist/checklist.css' %}">
+
+    <div class="content">
+        <div class="content__weight">
+            <div class="content__weight__text">
+                Your weight: 60 kg
+            </div>
+        </div>
+        <div class="content__graphs">
+            <div class="content__graphs__graph">
+                <div class="content__graphs__graph__first"></div>
+            </div>
+            <div class="content__graphs__graph">
+                <div class="content__graphs__graph__second"></div>
+            </div>
+            <div class="content__graphs__graph">
+                <div class="content__graphs__graph__third"></div>
+            </div>
+            <div class="content__graphs__graph">
+                <div class="content__graphs__graph__fourth"></div>
+            </div>
+        </div>
+        <div class="content__goal">
+            <div class="content__goal__text">
+                Goal: 52 kg
+            </div>
+        </div>
+        <div class="content__checklist">
+            <div class="content__checklist__todo">
+                <input type="checkbox" class="content__checklist__todo__check">
+                <div class="content__checklist__todo__text">Drink water</div>
+            </div>
+            <div class="content__checklist__todo">
+                <input type="checkbox" class="content__checklist__todo__check">
+                <div class="content__checklist__todo__text">Ate breakfast</div>
+            </div>
+            <div class="content__checklist__todo">
+                <input type="checkbox" class="content__checklist__todo__check">
+                <div class="content__checklist__todo__text">Drink water</div>
+            </div>
+            <div class="content__checklist__todo">
+                <input type="checkbox" class="content__checklist__todo__check">
+                <div class="content__checklist__todo__text">Ate lunch</div>
+            </div>
+            <div class="content__checklist__todo">
+                <input type="checkbox" class="content__checklist__todo__check">
+                <div class="content__checklist__todo__text">Drink water</div>
+            </div>
+            <div class="content__checklist__todo">
+                <input type="checkbox" class="content__checklist__todo__check">
+                <div class="content__checklist__todo__text">Ate dinner</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
