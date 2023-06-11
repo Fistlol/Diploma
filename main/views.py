@@ -116,19 +116,22 @@ def success(request, pk):
 
 @login_required(login_url='login/')
 def my_plans(request, pk):
-    user_plan = UserPlanModelViewSet.queryset.get(user_id=pk)
-    food_times = ['7:30', '10:00', '13:30', '17:00', '19:00']
-    food_types = ['Breakfast', 'Snack 1', 'Lunch', 'Snack 2', 'Dinner']
-    food_objects = user_plan.plan.diet.foods.all()
-    context = zip(food_times, food_types, food_objects)
+    try:
+        user_plan = UserPlanModelViewSet.queryset.get(user_id=pk)
+        food_times = ['7:30', '10:00', '13:30', '17:00', '19:00']
+        food_types = ['Breakfast', 'Snack 1', 'Lunch', 'Snack 2', 'Dinner']
+        food_objects = user_plan.plan.diet.foods.all()
+        context = zip(food_times, food_types, food_objects)
 
-    return render(
-        request,
-        'main/my_plans/my_plans.html',
-        {
-            'user_plan': user_plan,
-            'context': context,
-        })
+        return render(
+            request,
+            'main/my_plans/my_plans.html',
+            {
+                'user_plan': user_plan,
+                'context': context,
+            })
+    except:
+        return render(request, 'main/my_plans/my_plans.html')
 
 
 @login_required(login_url='login/')
