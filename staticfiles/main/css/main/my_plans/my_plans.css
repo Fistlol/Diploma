@@ -1,0 +1,174 @@
+.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content__logo {
+    height: 300px;
+    margin-bottom: 30px;
+    margin-top: 80px;
+}
+
+.content__text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #848484;
+    margin-bottom: 30px;
+}
+
+.content__link {
+    background: #4AB03A;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    font-feature-settings: 'ss02' on;
+    color: #FFFFFF;
+    padding: 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.container__content {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin-top: 55px;
+    justify-content: space-around;
+}
+
+.container__content__left {
+    width: 35em;
+}
+
+.container__content__left__vendor {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: #000000;
+
+}
+
+.container__content__left__company {
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 2em;
+    border: 1.5px solid #D9D9D9;
+    margin: 2em 0;
+}
+
+.container__content__left__company__name {
+    font-family: Montserrat, sans-serif;
+    text-decoration: underline;
+    font-weight: 500;
+    margin-bottom: 11px;
+    font-size: 1.4em;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #04061B;
+    mix-blend-mode: normal;
+}
+
+.container__content__left__company__description {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 12px;
+    text-align: justify;
+    letter-spacing: 0.1px;
+    color: #636894;
+    mix-blend-mode: multiply;
+    opacity: 0.93;
+}
+
+.container__content__left__company__price {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    color: #636894;
+    mix-blend-mode: multiply;
+}
+
+.container__content__left__calendar__image {
+    width: 100%;
+}
+
+.container__content__right__text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.container__content__right__block__day {
+    margin-bottom: 25px;
+}
+
+.container__content__right__block__day__card {
+    background: linear-gradient(93.74deg, #161616 0%, #060507 100%);
+    border-radius: 12px;
+}
+
+.container__content__right__block__day__info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.container__content__right__block__day__info__time {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    text-align: center;
+    color: #6A6A6A;
+    opacity: 0.8;
+    margin-right: 25px;
+}
+
+.container__content__right__block__day__card__info {
+    display: flex;
+    padding: 12px;
+    justify-content: space-between;
+}
+
+.container__content__right__block__day__card__info__image {
+    width: 6em;
+    height: 6em;
+    border-radius: 12px;
+}
+
+.container__content__right__block__day__card__info__text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 15px;
+}
+
+.container__content__right__block__day__card__info__stick {
+    background: #FFBD33;
+    border-radius: 12px;
+    width: 5px;
+}

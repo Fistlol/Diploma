@@ -1,0 +1,36 @@
+.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.content__logo {
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.content__text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.content__button {
+    background: #4AB03A;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    font-feature-settings: 'ss02' on;
+    color: #FFFFFF;
+    padding: 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+}
