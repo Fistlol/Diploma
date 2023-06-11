@@ -13,6 +13,7 @@ class User(AbstractUser):
 
 class UserPlan(models.Model):
     user = models.ForeignKey('main.User', related_name="user_plans", on_delete=models.CASCADE)
+    plan = models.ForeignKey('main.Plan', related_name="user_plans", on_delete=models.CASCADE)
     is_paid = models.BooleanField()
     created_at = models.DateField()
     start_at = models.DateField()
@@ -89,7 +90,6 @@ class Diet(models.Model):
 class Plan(models.Model):
     company = models.ForeignKey('main.Company', related_name="plans", on_delete=models.CASCADE)
     diet = models.ForeignKey('main.Diet', related_name="plans", on_delete=models.CASCADE)
-    user_plan = models.ForeignKey('main.UserPlan', related_name="plans", on_delete=models.CASCADE)
     days = models.IntegerField(null=True)
     price = models.DecimalField(decimal_places=2, max_digits=10)
     benefit = models.IntegerField(null=True)

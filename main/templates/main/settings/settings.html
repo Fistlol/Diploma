@@ -5,32 +5,32 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'main/css/main/settings/settings.css' %}">
 
-    <div class="container">
-        <div class="container__left">
-            <nav class="container__left__nav">
-                <div class="container__left__nav__block">
-                    <a href="{% url 'main:your_information' %}" class="container__left__nav__block__link">
+    <div class="content">
+        <div class="content__left">
+            <nav class="content__left__nav">
+                <a href="{% url 'main:your_information' %}" class="content__left__nav__block">
+                    <span href="{% url 'main:your_information' %}" class="content__left__nav__block__link">
                         Your Information
-                    </a>
-                </div>
-                <div class="container__left__nav__block">
-                    <a href="{% url 'main:order_history' %}" class="container__left__nav__block__link">
+                    </span>
+                </a>
+                <a href="{% url 'main:order_history' %}" class="content__left__nav__block">
+                    <span class="content__left__nav__block__link">
                         Order History
-                    </a>
-                </div>
-                <div class="container__left__nav__block">
-                    <a href="{% url 'main:promo_codes' %}" class="container__left__nav__block__link">
+                    </span>
+                </a>
+                <a href="{% url 'main:promo_codes' %}" class="content__left__nav__block">
+                    <span class="content__left__nav__block__link">
                         Promo Codes
-                    </a>
-                </div>
-                <div class="container__left__nav__block">
-                    <a href="{% url 'main:logout_page' %}" class="container__left__nav__block__link">
+                    </span>
+                </a>
+                <a href="{% url 'main:logout_page' %}" class="content__left__nav__block">
+                    <span class="content__left__nav__block__link">
                         Log out
-                    </a>
-                </div>
+                    </span>
+                </a>
             </nav>
         </div>
-        <div class="container__right">
+        <div class="content__right">
             {% block right %}
             {% endblock %}
         </div>

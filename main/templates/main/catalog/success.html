@@ -1,0 +1,13 @@
+{% extends "main/main_page.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main/catalog/success.css' %}">
+
+    <div class="content">
+        <img src="{% static 'main/icons/green_pepper_success.png' %}" class="content__logo" alt="logo">
+        <div class="content__text">Your order has been confirmed!</div>
+        <a href="{% url 'main:my_plans' user.id %}" class="content__button">Refer To My Plans</a>
+    </div>
+{% endblock %}

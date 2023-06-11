@@ -4,23 +4,25 @@
 {% block right %}
     <link rel="stylesheet" href="{% static 'main/css/main/settings/promo_codes.css' %}">
     
-    <div class="content">
-        <div class="content__logo">
-            <img src="{% static 'main/icons/green_pepper.png' %}" class="content__logo__img" alt="logo">
-            <img src="{% static 'main/icons/green_pepper.png' %}" class="content__logo__img" alt="logo">
-            <img src="{% static 'main/icons/green_pepper.png' %}" class="content__logo__img" alt="logo">
-        </div>
-        <div class="content__title">
-            Get bonuses with Pepper!
-        </div>
-        <div class="content__description">
-            Get a discount by entering a promo code
-        </div>
-        <div class="content__buttons">
-            <input type="text" class="content__buttons__input">
-            <button class="content__buttons__share">
-                Share code
-            </button>
+    <div class="container">
+        <div class="container__content">
+            <div class="container__content__logo">
+                <img src="{% static 'main/icons/green_pepper.png' %}" class="container__content__logo__img" alt="logo">
+                <img src="{% static 'main/icons/green_pepper.png' %}" class="container__content__logo__img" alt="logo">
+                <img src="{% static 'main/icons/green_pepper.png' %}" class="container__content__logo__img" alt="logo">
+            </div>
+            <div class="container__content__title">
+                Get bonuses with Pepper!
+            </div>
+            <div class="container__content__description">
+                Get a discount by entering a promo code
+            </div>
+            <div class="container__content__buttons">
+                <input type="text" class="container__content__buttons__input" maxlength="6">
+                <button class="container__content__buttons__share">
+                    Share code
+                </button>
+            </div>
         </div>
     </div>
 {% endblock %}

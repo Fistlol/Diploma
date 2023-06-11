@@ -5,14 +5,72 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'main/css/main/my_plans/my_plans.css' %}">
 
-    {% if authenticated_user == username %}
-        <div>
-            TEST
+    {% if user_plan.user.id == user.id %}
+        <div class="container">
+            <div class="container__content">
+                <div class="container__content__left">
+                    <div class="container__content__left__vendor">
+                        Your Vendor
+                    </div>
+                    <div class="container__content__left__company">
+                        <div class="container__content__left__company__name">
+                            {{ user_plan.plan.company.name }}
+                        </div>
+                        <div class="container__content__left__company__description">
+                            {{ user_plan.plan.company.description }}
+                        </div>
+                        <div class="container__content__left__company__price">
+                            Average Price: 12 000 ₸
+                        </div>
+                    </div>
+                    <div class="container__content__left__calendar">
+                        <img src="{% static 'main/icons/calendar.svg' %}" class="container__content__left__calendar__image">
+{#                        <div class="container__content__left__calendar__text">#}
+{#                            Calendar#}
+{#                        </div>#}
+{#                        <div class="container__content__left__calendar__block">#}
+{##}
+{#                        </div>#}
+                    </div>
+                </div>
+                <div class="container__content__right">
+                    <div class="container__content__right__text">
+                        Schedule
+                    </div>
+                    <div class="container__content__right__block">
+                        {% for time, type, food in context %}
+                            <div class="container__content__right__block__day">
+                                <div class="container__content__right__block__day__info">
+                                    <div class="container__content__right__block__day__info__time">
+                                        {{ time }}
+                                    </div>
+                                    <div class="container__content__right__block__day__info__food">
+                                        {{ type }} - {{ food.calories }} Kcal
+                                    </div>
+                                </div>
+                                <div class="container__content__right__block__day__card">
+                                    <div class="container__content__right__block__day__card__info">
+                                        <img src="{{ food.photo.url }}"
+                                             alt="image"
+                                             class="container__content__right__block__day__card__info__image">
+                                        <div class="container__content__right__block__day__card__info__text">
+                                            {{ food.name }}
+                                        </div>
+                                        <div class="container__content__right__block__day__card__info__stick">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     {% else %}
         <div class="content">
             <img src="{% static 'main/icons/red_pepper.svg' %}" class="content__logo" alt="logo">
-            <div class="content__text">You have no plans</div>
+            <div class="content__text">You have no plans.</div>
             <a href="{% url 'main:catalog' %}" class="content__link">Refer to Catalog</a>
         </div>
     {% endif %}

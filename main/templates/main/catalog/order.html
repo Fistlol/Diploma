@@ -1,0 +1,55 @@
+{% extends "main/main_page.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main/catalog/order.css' %}">
+
+    <div class="container">
+        <div class="container__content">
+            <div class="container__content__text">
+                Your order
+            </div>
+            <div class="container__content__block">
+                <div class="container__content__block__company">
+                    {{ plan_object.company.name }}
+                </div>
+                <div class="container__content__block__diet">
+                    {{ plan_object.diet.name }}
+                </div>
+                <div class="container__content__block__days">
+                    {{ plan_object.days }} days
+                </div>
+                <div class="container__content__block__price">
+                    {{ plan_object.price }} ₸
+                </div>
+            </div>
+            <div class="container__content__texts">
+                <div class="container__content__texts__address">
+                    My Address:&nbsp;
+                    {% if user.is_authenticated %}
+                        <span class="container__content__texts__link">
+                            {{ user.address }}
+                        </span>
+                    {% endif %}
+                </div>
+                <div class="container__content__texts__phone">
+                    Phone Number:&nbsp;
+                    {% if user.is_authenticated %}
+                        <span class="container__content__texts__link">
+                            {{ user.phone }}
+                        </span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="container__content__buttons">
+                <button onclick="location.href='{% url 'main:success' plan_object.id %}'" class="container__content__buttons__confirm">
+                    Confirm
+                </button>
+                <button onclick="location.href='{% url 'main:catalog' %}'" class="container__content__buttons__cancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

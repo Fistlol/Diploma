@@ -1,0 +1,194 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.container__content {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin-top: 55px;
+    justify-content: space-around;
+}
+
+.container__content__left {
+    width: 35em;
+}
+
+.container__content__left__vendor {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: #000000;
+
+}
+
+.container__content__left__company {
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 2em;
+    border: 1.5px solid #D9D9D9;
+    margin: 2em 0;
+}
+
+.container__content__left__company__name {
+    font-family: Montserrat, sans-serif;
+    text-decoration: underline;
+    font-weight: 500;
+    margin-bottom: 11px;
+    font-size: 1.4em;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #04061B;
+    mix-blend-mode: normal;
+}
+
+.container__content__left__company__description {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 12px;
+    text-align: justify;
+    letter-spacing: 0.1px;
+    color: #636894;
+    mix-blend-mode: multiply;
+    opacity: 0.93;
+}
+
+.container__content__left__company__price {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    color: #636894;
+    mix-blend-mode: multiply;
+}
+
+.container__content__left__menu {
+    background: #F5F5F5;
+}
+
+.container__content__left__menu__block {
+    padding: 2em;
+}
+
+.container__content__left__menu__block__text {
+    margin-bottom: 2em;
+}
+
+.container__content__left__menu__block__foods__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.container__content__left__menu__block__foods__info__image {
+    width: 11em;
+}
+
+.container__content__right {
+    width: 35em;
+}
+
+.container__content__right__text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 2em;
+}
+
+.container__content__right__block__plan__card {
+    background: #04061B;
+    border-radius: 22px;
+    padding: 1.7em;
+    width: 65%;
+    margin-bottom: 1em;
+}
+
+.container__content__right__block__plan__card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__content__right__block__plan__card__info__title {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 21px;
+    letter-spacing: 0.1px;
+    color: #FCFCFC;
+}
+
+.container__content__right__block__plan__card__info__text__kcal {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 19px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.container__content__right__block__plan__card__info__text__price {
+    font-family: Montserrat, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 10px;
+    letter-spacing: 0.1px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+}
+
+.container__content__right__block__plan__diet {
+    width: 50%;
+    background: #1D214A;
+    border-radius: 16px;
+    padding: 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.container__content__right__block__plan__diet__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__content__right__block__plan__diet__info__title {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: #FCFCFC;
+}
+
+.container__content__right__block__plan__diet__info__content__price {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.container__content__right__block__plan__diet__info__content__benefit {
+    font-family: Montserrat, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 0.1px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+}

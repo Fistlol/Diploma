@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.container__content {
+    height: 100%;
+    width: 25em;
+    margin-top: 55px;
+}
+
+.container__content__block {
+    background: #101545;
+    border-radius: 25.753px;
+    height: 6em;
+}
+
+.container__content__block__info {
+    padding: 20px;
+}
+
+.container__content__block__info__text {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+}
+
+.container__content__block__info__diagram__percents {
+    display: flex;
+    justify-content: end;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+}
+
+.container__content__block__info__diagram__progress {
+    background: #FFFFFF;
+    border-radius: 43px;
+    height: 5px;
+    margin-top: 8px;
+}
+
+.container__content__block__info__diagram__progress__active {
+    background: #A3F463;
+    border-radius: 43px;
+    height: 5px;
+    width: 15%;
+}

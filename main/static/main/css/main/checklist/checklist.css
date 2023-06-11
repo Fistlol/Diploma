@@ -5,7 +5,6 @@
 }
 
 .content__weight {
-    width: 65%;
     margin-bottom: 19px;
 }
 
@@ -57,7 +56,6 @@
 }
 
 .content__goal {
-    width: 100%;
     text-align: end;
     margin-top: 15px;
 }

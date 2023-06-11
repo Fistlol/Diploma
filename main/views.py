@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -65,30 +67,73 @@ def logout_user(request):
 
 @login_required(login_url='login/')
 def catalog(request):
-    companies = CompanyModelViewSet.queryset
-    # company = [x for x in CompanyModelViewSet.queryset.values_list('name')[0]]
-    # print(type(company))
+    companies = CompanyModelViewSet.queryset.all()
 
     return render(request, 'main/catalog/catalog.html', {'companies': companies})
 
 
 @login_required(login_url='login/')
-def my_plans(request):
-    username = UserModelViewSet.queryset.values_list('username')[3][0]
-    authenticated_user = str(request.user)
+def company(request, pk):
+    company_object = CompanyModelViewSet.queryset.get(pk=pk)
+    company_objects = CompanyModelViewSet.queryset.all()
+    food_objects = FoodModelViewSet.queryset.all().filter(company_id=pk)
+    plan_objects = PlanModelViewSet.queryset.all().filter(company_id=pk)
+    diet_objects = DietModelViewSet.queryset.all().filter(company_id=pk)
 
-    return render(request, 'main/my_plans/my_plans.html', {'username': username,
-                                                           'authenticated_user': authenticated_user})
+    return render(request, 'main/catalog/company.html', {
+        'company_object': company_object,
+        'company_objects': company_objects,
+        'food_objects': food_objects,
+        'plan_objects': plan_objects,
+        'diet_objects': diet_objects,
+    })
+
+
+@login_required(login_url='login/')
+def order(request, pk):
+    plan_object = PlanModelViewSet.queryset.get(pk=pk)
+
+    return render(request, 'main/catalog/order.html', {
+        'plan_object': plan_object,
+    })
+
+
+@login_required(login_url='login/')
+def success(request, pk):
+    days = PlanModelViewSet.queryset.get(pk=pk).days
+
+    models.UserPlan.objects.create(
+        user_id=request.user.id,
+        plan_id=pk,
+        is_paid=False,
+        created_at=datetime.today(),
+        start_at=datetime.today() + timedelta(days=1),
+        end_at=datetime.today() + timedelta(days=days+1),
+    )
+
+    return render(request, 'main/catalog/success.html')
+
+
+@login_required(login_url='login/')
+def my_plans(request, pk):
+    user_plan = UserPlanModelViewSet.queryset.get(pk=pk)
+    food_times = ['7:30', '10:00', '13:30', '17:00', '19:00']
+    food_types = ['Breakfast', 'Snack 1', 'Lunch', 'Snack 2', 'Dinner']
+    food_objects = user_plan.plan.diet.foods.all()
+    context = zip(food_times, food_types, food_objects)
+
+    return render(
+        request,
+        'main/my_plans/my_plans.html',
+        {
+            'user_plan': user_plan,
+            'context': context,
+        })
 
 
 @login_required(login_url='login/')
 def checklist(request):
     return render(request, 'main/checklist/checklist.html')
-
-
-@login_required(login_url='login/')
-def settings(request):
-    return render(request, 'main/settings/settings.html')
 
 
 @login_required(login_url='login/')

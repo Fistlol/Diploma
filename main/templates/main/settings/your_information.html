@@ -3,27 +3,54 @@
 
 {% block right %}
     <link rel="stylesheet" href="{% static 'main/css/main/settings/your_information.css' %}">
-    
-    <div class="content">
-        <label class="container__label">
-            First Name
-        </label>
-        <input type="text" name="first_name" class="container__input">
-        <label class="container__label">
-            Last Name
-        </label>
-        <input type="text" name="last_name" class="container__input">
-        <label class="container__label">
-            E-mail Adress
-        </label>
-        <input type="text" name="email" class="container__input">
-        <label class="container__label">
-            Mobile Number
-        </label>
-        <input type="text" name="mobile_number" class="container__input">
 
-        <button class="container__save">
-            Save
-        </button>
+    <div class="container">
+        <div class="container__content">
+            <div class="container__content__block">
+                <label class="container__content__block__label">
+                    First Name
+                </label>
+                <span type="text" class="container__content__block__input">
+                    {% if user.is_authenticated %}
+                        {{ user.first_name }}
+                    {% endif %}
+                </span>
+            </div>
+            <div class="container__content__block">
+                <label class="container__content__block__label">
+                    Last Name
+                </label>
+                <span type="text" class="container__content__block__input">
+                    {% if user.is_authenticated %}
+                        {{ user.last_name }}
+                    {% endif %}
+                </span>
+            </div>
+            <div class="container__content__block">
+                <label class="container__content__block__label">
+                    E-mail Adress
+                </label>
+                <span type="text" class="container__content__block__input">
+                    {% if user.is_authenticated %}
+                        {{ user.email }}
+                    {% endif %}
+                </span>
+            </div>
+            <div class="container__content__block">
+                <label class="container__content__block__label">
+                    Mobile Number
+                </label>
+                <span type="text" class="container__content__block__input">
+                    {% if user.is_authenticated %}
+                        {{ user.phone }}
+                    {% endif %}
+                </span>
+            </div>
+            <div class="container__content__button">
+                <button class="container__content__button__save">
+                    Edit
+                </button>
+            </div>
+        </div>
     </div>
 {% endblock %}

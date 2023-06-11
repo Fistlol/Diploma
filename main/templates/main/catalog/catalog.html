@@ -64,7 +64,7 @@
             <div class="content__right__companies">
                 {% for company in companies %}
                     <div class="content__right__companies__block">
-                        <div class="content__right__companies__block__company">
+                        <div onclick="location.href='{% url 'main:company' company.pk %}'" class="content__right__companies__block__company">
                             <div class="content__right__companies__block__company__name">
                                 {{ company.name }}
                             </div>

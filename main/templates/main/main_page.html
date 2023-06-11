@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../static/main/icons/green_pepper_icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'main/css/main/main_page.css' %}">
     <title>Pepper Food</title>
 </head>
 <body>
-    <div class="main-container">
+    <div class="main_container">
         <div class="top">
             <a href="/" class="top__logo">
                 <img src="{% static 'main/icons/peper_logo_main.png' %}" alt="logo">
@@ -19,7 +20,7 @@
                 <a href="{% url 'main:catalog' %}" class="top__nav__ref">
                     Catalog
                 </a>
-                <a href="{% url 'main:my_plans' %}" class="top__nav__ref">
+                <a href="{% url 'main:my_plans' user.id %}" class="top__nav__ref">
                     My plans
                 </a>
                 <a href="{% url 'main:checklist' %}" class="top__nav__ref">

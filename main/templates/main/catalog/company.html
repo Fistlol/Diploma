@@ -1,0 +1,95 @@
+{% extends "main/main_page.html" %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'main/css/main/catalog/company.css' %}">
+
+    <div class="container">
+        <div class="container__content">
+            <div class="container__content__left">
+                <div class="container__content__left__vendor">
+                    Your Vendor
+                </div>
+                <div class="container__content__left__company">
+                    <div class="container__content__left__company__name">
+                        {{ company_object.name }}
+                    </div>
+                    <div class="container__content__left__company__description">
+                        {{ company_object.description }}
+                    </div>
+                    <div class="container__content__left__company__price">
+                        Average Price: 12 000 ₸
+                    </div>
+                </div>
+                <div class="container__content__left__menu">
+                    <div class="container__content__left__menu__block">
+                        <div class="container__content__left__menu__block__text">
+                            Menu
+                        </div>
+                        <div class="container__content__left__menu__block__foods">
+                            {% for food in food_objects %}
+                                <div class="container__content__left__menu__block__foods__info">
+                                    <div class="container__content__left__menu__block__foods__info__description">
+                                        {{ food.description }}
+                                    </div>
+                                    <img src="{{ food.photo.url }}"
+                                         alt="image"
+                                         class="container__content__left__menu__block__foods__info__image"
+                                    >
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__content__right">
+                <div class="container__content__right__text">
+                    Choose a plan
+                </div>
+                <div class="container__content__right__block">
+                    {% for diet in diet_objects %}
+                        <div class="container__content__right__block__plan">
+                            <div class="container__content__right__block__plan__card">
+                                <div class="container__content__right__block__plan__card__info">
+                                    <div class="container__content__right__block__plan__card__info__title">
+                                        {{ diet.name }}
+                                    </div>
+                                    <div class="container__content__right__block__plan__card__info__text">
+                                        <div class="container__content__right__block__plan__card__info__text__kcal">
+                                            {{ diet.calories }} calories
+                                        </div>
+                                        <div class="container__content__right__block__plan__card__info__text__price">
+                                            from 5000₸ a day
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% for plan in plan_objects %}
+                                {% if plan.diet_id == diet.id %}
+                                    <div onclick="location.href='{% url 'main:order' plan.pk %}'"
+                                         class="container__content__right__block__plan__diet"
+                                    >
+                                        <div class="container__content__right__block__plan__diet__info">
+                                            <div class="container__content__right__block__plan__diet__info__title">
+                                                {{ plan.days }} days
+                                            </div>
+                                            <div class="container__content__right__block__plan__diet__info__content">
+                                                <div class="container__content__right__block__plan__diet__info__content__price">
+                                                    {{ plan.price }} ₸
+                                                </div>
+                                                <div class="container__content__right__block__plan__diet__info__content__benefit">
+                                                    save {{ plan.benefit }}%
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

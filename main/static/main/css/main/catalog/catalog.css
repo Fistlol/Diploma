@@ -4,7 +4,7 @@
 
 .content__left {
     width: 25em;
-    height: 90.5vh;
+    height: 100%;
     border-right: 1px solid #DADADA;
 }
 
@@ -86,7 +86,7 @@
     border-radius: 9px;
     box-sizing: border-box;
     padding: 0.5em;
-    font-family: inherit;
+    font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
@@ -99,7 +99,7 @@
     border-radius: 9px;
     box-sizing: border-box;
     padding: 0.3em;
-    font-family: inherit;
+    font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
@@ -141,7 +141,8 @@
 
 .content__right {
     display: flex;
-    width: 154.7vh;
+    width: 100%;
+    height: 100%;
     align-items: center;
     flex-direction: column;
     background: #F5F5F5;
@@ -172,7 +173,16 @@
 }
 
 .content__right__companies {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.content__right__companies__block:nth-child(3n) {
+    margin-top: 35px;
+}
+
+.content__right__companies__block:nth-child(4n) {
+    margin-top: 35px;
 }
 
 .content__right__companies__block__company {
@@ -180,7 +190,7 @@
     border-radius: 30px;
     padding: 2em;
     margin-right: 36px;
-
+    cursor: pointer;
 }
 
 .content__right__companies__block__company__name {
@@ -188,10 +198,36 @@
     font-weight: 500;
     font-size: 1.4em;
     line-height: 20px;
-    letter-spacing: 0.07px;
+    letter-spacing: 0.1px;
     margin-bottom: 11px;
+    color: #04061B;
+    mix-blend-mode: normal;
 }
 
 .content__right__companies__block__company__description {
     margin-bottom: 10px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 11px;
+    text-align: justify;
+    letter-spacing: 0.1px;
+    color: #636894;
+    mix-blend-mode: multiply;
+    opacity: 0.93;
+}
+
+.content__right__companies__block__company__price {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.1px;
+    color: #636894;
+    mix-blend-mode: multiply;
+}
+
+@media (max-width: 730px) {
+    .content__left {
+        width: 20em;
+    }
 }

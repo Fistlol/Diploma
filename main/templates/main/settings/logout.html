@@ -4,9 +4,13 @@
 {% block right %}
     <link rel="stylesheet" href="{% static 'main/css/main/settings/logout.css' %}">
 
-    <div class="content">
-        <div class="content__logout">Log out</div>
-        <div class="content__text">Would you like to log out?</div>
-        <a class="content__logout" href="{% url 'main:logout_user' %}">Log out</a>
+    <div class="container">
+        <div class="container__content">
+            <div class="container__content__logout">Log out</div>
+            <div class="container__content__text">Would you like to log out?</div>
+            <div class="container__content__buttons">
+                <a class="container__content__buttons__button" href="{% url 'main:logout_user' %}">Log out</a>
+            </div>
+        </div>
     </div>
 {% endblock %}
