@@ -116,7 +116,7 @@ def success(request, pk):
 
 @login_required(login_url='login/')
 def my_plans(request, pk):
-    user_plan = UserPlanModelViewSet.queryset.get(pk=pk)
+    user_plan = UserPlanModelViewSet.queryset.get(user_id=pk)
     food_times = ['7:30', '10:00', '13:30', '17:00', '19:00']
     food_types = ['Breakfast', 'Snack 1', 'Lunch', 'Snack 2', 'Dinner']
     food_objects = user_plan.plan.diet.foods.all()
